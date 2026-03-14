@@ -137,6 +137,61 @@ html, body, [class*="css"]  {
   padding: 8px 0;
 }
 
+[data-testid="stFileUploader"] > div {
+  background: linear-gradient(135deg, #eef5ff 0%, #dceaff 100%) !important;
+  border: 1px solid rgba(15, 76, 129, 0.16) !important;
+  border-radius: 18px !important;
+  box-shadow: 0 14px 30px rgba(18, 38, 63, 0.08) !important;
+}
+
+[data-testid="stFileUploaderDropzone"] {
+  background: rgba(255, 255, 255, 0.72) !important;
+  border: 1px dashed rgba(15, 76, 129, 0.26) !important;
+  border-radius: 14px !important;
+}
+
+[data-testid="stFileUploaderDropzone"] svg,
+[data-testid="stFileUploader"] svg {
+  color: #0f4c81 !important;
+  fill: #0f4c81 !important;
+}
+
+[data-testid="stFileUploaderDropzone"] div,
+[data-testid="stFileUploaderDropzone"] p,
+[data-testid="stFileUploaderDropzone"] span {
+  color: #0b1320 !important;
+  font-weight: 600 !important;
+}
+
+[data-testid="stFileUploaderDropzone"] small {
+  color: #556070 !important;
+}
+
+[data-testid="stFileUploader"] small,
+[data-testid="stFileUploader"] span,
+[data-testid="stFileUploader"] label,
+[data-testid="stFileUploaderFileName"],
+[data-testid="stFileUploaderFileData"] {
+  color: #0b1320 !important;
+}
+
+[data-testid="stFileUploader"] section {
+  color: #0b1320 !important;
+}
+
+[data-testid="stFileUploader"] button {
+  background: linear-gradient(135deg, #2b8be7 0%, #176fc1 100%) !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.24) !important;
+  border-radius: 12px !important;
+  font-weight: 600 !important;
+}
+
+[data-testid="stFileUploader"] button:hover {
+  background: linear-gradient(135deg, #46a3ff 0%, #2381d8 100%) !important;
+  border-color: rgba(255, 255, 255, 0.36) !important;
+}
+
 .small-muted {
   color: var(--muted);
   font-size: 12px;
