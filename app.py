@@ -31,14 +31,16 @@ st.markdown(
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=IBM+Plex+Sans:wght@400;600;700&display=swap');
 
 :root {
-  --bg1: #f7fbff;
-  --bg2: #e9f2ff;
-  --ink: #0b1320;
-  --muted: #556070;
-  --accent: #0f4c81;
-  --accent2: #18a0fb;
-  --card: #ffffff;
-  --border: #d8e3f0;
+  --bg1: #07131f;
+  --bg2: #0b1c2f;
+  --ink: #e8f1fb;
+  --muted: #8ca3bb;
+  --accent: #1e88e5;
+  --accent2: #4cc9f0;
+  --card: #0c2135;
+  --card2: #12314d;
+  --border: rgba(124, 167, 211, 0.18);
+  --line: rgba(124, 167, 211, 0.12);
 }
 
 html, body, [class*="css"]  {
@@ -47,55 +49,35 @@ html, body, [class*="css"]  {
 }
 
 .stApp {
-  background: radial-gradient(1200px 600px at 10% -10%, var(--bg2), var(--bg1));
+  background:
+    radial-gradient(900px 500px at 0% 0%, rgba(76, 201, 240, 0.12), transparent 60%),
+    radial-gradient(700px 400px at 100% 0%, rgba(30, 136, 229, 0.16), transparent 55%),
+    linear-gradient(180deg, var(--bg2) 0%, var(--bg1) 100%);
 }
 
-.hero {
-  padding: 28px 32px;
-  border-radius: 16px;
-  background: linear-gradient(135deg, #0f4c81 0%, #0b2b4a 100%);
-  color: #ffffff;
-  box-shadow: 0 12px 30px rgba(12, 30, 53, 0.2);
+[data-testid="stSidebar"] {
+  background: linear-gradient(180deg, #163f72 0%, #0b2746 100%);
+  border-right: 1px solid rgba(112, 162, 214, 0.18);
 }
 
-.hero h1 {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 34px;
-  margin: 0 0 6px 0;
-  letter-spacing: 0.2px;
+[data-testid="stSidebar"] * {
+  color: #eef6ff;
 }
 
-.hero p {
-  margin: 0;
-  color: #dbe7f3;
-}
-
-.badges {
-  margin-top: 12px;
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-}
-
-.badge {
-  background: rgba(255, 255, 255, 0.18);
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  padding: 6px 10px;
-  border-radius: 999px;
-  font-size: 12px;
+[data-testid="stSidebar"] [data-testid="stMarkdownContainer"] p {
+  color: #d4e5f7;
 }
 
 .section-title {
   font-family: 'Space Grotesk', sans-serif;
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 700;
-  color: var(--accent);
-  margin: 28px 0 8px 0;
+  color: #f4f9ff;
+  margin: 26px 0 8px 0;
   display: flex;
   align-items: center;
   gap: 10px;
   letter-spacing: 0.2px;
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.35);
 }
 
 .section-title span {
@@ -103,34 +85,87 @@ html, body, [class*="css"]  {
   align-items: center;
 }
 
-.card {
-  background: var(--card);
+.hero {
+  padding: 28px 32px;
+  border-radius: 22px;
+  background:
+    radial-gradient(420px 160px at 85% 10%, rgba(76, 201, 240, 0.16), transparent 55%),
+    linear-gradient(135deg, #0b2239 0%, #07192d 100%);
+  color: #ffffff;
+  border: 1px solid rgba(120, 168, 218, 0.16);
+  box-shadow: 0 24px 60px rgba(3, 12, 22, 0.35);
+}
+
+.hero h1 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 42px;
+  margin: 0 0 10px 0;
+  letter-spacing: 0.3px;
+}
+
+.hero p {
+  margin: 0;
+  max-width: 720px;
+  color: #c9dbef;
+  font-size: 20px;
+}
+
+.badges {
+  margin-top: 18px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.badge {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  color: #edf6ff;
+  padding: 9px 14px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.panel {
+  background: linear-gradient(180deg, rgba(14, 35, 56, 0.94) 0%, rgba(10, 26, 42, 0.96) 100%);
   border: 1px solid var(--border);
-  border-radius: 14px;
-  padding: 16px 18px;
-  box-shadow: 0 10px 18px rgba(13, 44, 77, 0.06);
+  border-radius: 18px;
+  padding: 18px 18px 12px 18px;
+  box-shadow: 0 18px 32px rgba(1, 8, 16, 0.24);
+}
+
+.panel-tight {
+  padding-bottom: 18px;
+}
+
+.divider {
+  height: 1px;
+  background: var(--line);
+  margin: 20px 0 8px 0;
 }
 
 [data-testid="stMetric"] {
-  background: var(--card);
+  background: linear-gradient(180deg, var(--card2) 0%, var(--card) 100%);
   border: 1px solid var(--border);
-  padding: 12px 14px;
-  border-radius: 12px;
+  padding: 14px 16px;
+  border-radius: 16px;
   color: var(--ink);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
 }
 
 [data-testid="stMetricLabel"] {
-  color: var(--muted) !important;
+  color: #9eb3c7 !important;
 }
 
 [data-testid="stMetricValue"] {
-  color: var(--ink) !important;
-  font-size: 2.15rem !important;
+  color: #ffffff !important;
+  font-size: 2rem !important;
   line-height: 1.1 !important;
 }
 
 [data-testid="stMetricDelta"] {
-  color: var(--accent) !important;
+  color: #61d0ff !important;
 }
 
 [data-testid="stFileUploader"] {
@@ -138,33 +173,33 @@ html, body, [class*="css"]  {
 }
 
 [data-testid="stFileUploader"] > div {
-  background: linear-gradient(135deg, #eef5ff 0%, #dceaff 100%) !important;
-  border: 1px solid rgba(15, 76, 129, 0.16) !important;
+  background: linear-gradient(180deg, rgba(14, 35, 56, 0.98) 0%, rgba(10, 26, 42, 0.98) 100%) !important;
+  border: 1px solid var(--border) !important;
   border-radius: 18px !important;
-  box-shadow: 0 14px 30px rgba(18, 38, 63, 0.08) !important;
+  box-shadow: 0 18px 28px rgba(2, 10, 18, 0.24) !important;
 }
 
 [data-testid="stFileUploaderDropzone"] {
-  background: rgba(255, 255, 255, 0.72) !important;
-  border: 1px dashed rgba(15, 76, 129, 0.26) !important;
+  background: rgba(255, 255, 255, 0.02) !important;
+  border: 1px dashed rgba(116, 166, 218, 0.22) !important;
   border-radius: 14px !important;
 }
 
 [data-testid="stFileUploaderDropzone"] svg,
 [data-testid="stFileUploader"] svg {
-  color: #0f4c81 !important;
-  fill: #0f4c81 !important;
+  color: #61d0ff !important;
+  fill: #61d0ff !important;
 }
 
 [data-testid="stFileUploaderDropzone"] div,
 [data-testid="stFileUploaderDropzone"] p,
 [data-testid="stFileUploaderDropzone"] span {
-  color: #0b1320 !important;
+  color: #f3f8fe !important;
   font-weight: 600 !important;
 }
 
 [data-testid="stFileUploaderDropzone"] small {
-  color: #556070 !important;
+  color: #9db6cc !important;
 }
 
 [data-testid="stFileUploader"] small,
@@ -172,23 +207,23 @@ html, body, [class*="css"]  {
 [data-testid="stFileUploader"] label,
 [data-testid="stFileUploaderFileName"],
 [data-testid="stFileUploaderFileData"] {
-  color: #0b1320 !important;
+  color: #f4f9ff !important;
 }
 
 [data-testid="stFileUploader"] section {
-  color: #0b1320 !important;
+  color: #f4f9ff !important;
 }
 
 [data-testid="stFileUploader"] button {
-  background: linear-gradient(135deg, #2b8be7 0%, #176fc1 100%) !important;
+  background: linear-gradient(135deg, #2a95f7 0%, #1c77d2 100%) !important;
   color: #ffffff !important;
-  border: 1px solid rgba(255, 255, 255, 0.24) !important;
+  border: 1px solid rgba(255, 255, 255, 0.18) !important;
   border-radius: 12px !important;
   font-weight: 600 !important;
 }
 
 [data-testid="stFileUploader"] button:hover {
-  background: linear-gradient(135deg, #46a3ff 0%, #2381d8 100%) !important;
+  background: linear-gradient(135deg, #49a8ff 0%, #2f87df 100%) !important;
   border-color: rgba(255, 255, 255, 0.36) !important;
 }
 
@@ -198,14 +233,36 @@ html, body, [class*="css"]  {
 }
 
 .section-note {
-  color: var(--muted);
+  color: #97afc7;
   font-size: 13px;
-  margin: -2px 0 10px 0;
+  margin: -2px 0 12px 0;
+}
+
+[data-testid="stDataFrame"],
+[data-testid="stTable"] {
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+[data-testid="stDataFrame"] div {
+  color: #e7f0fa;
+}
+
+[data-testid="stVerticalBlock"] > [style*="flex-direction: column"] > [data-testid="stVerticalBlockBorderWrapper"] {
+  width: 100%;
 }
 </style>
 """,
     unsafe_allow_html=True,
 )
+
+st.sidebar.header("Decision Policy ⚙️")
+approve_at = st.sidebar.slider("Approve at or above", min_value=60, max_value=95, value=80)
+review_at = st.sidebar.slider("Review at or above", min_value=30, max_value=80, value=50)
+
+st.sidebar.markdown("---")
+st.sidebar.markdown("Tune the policy thresholds below to make the engine more strict or more flexible.")
 
 st.markdown(
     """
@@ -222,16 +279,13 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
-st.sidebar.header("Decision Policy ⚙️")
-approve_at = st.sidebar.slider("Approve at or above", min_value=60, max_value=95, value=80)
-review_at = st.sidebar.slider("Review at or above", min_value=30, max_value=80, value=50)
-
-st.sidebar.markdown("---")
-st.sidebar.markdown("This demo scores each transaction and applies the policy thresholds above.")
-
 st.markdown("<div class='section-title'>Upload Data ⬆️</div>", unsafe_allow_html=True)
-
-uploaded_file = st.file_uploader("Transaction CSV", type=["csv"])
+st.markdown(
+    "<div class='panel panel-tight'><div class='section-note'>Upload the transaction CSV to run scoring, decisioning, and dashboard analytics in one flow.</div>",
+    unsafe_allow_html=True,
+)
+uploaded_file = st.file_uploader("Transaction CSV", type=["csv"], label_visibility="collapsed")
+st.markdown("</div>", unsafe_allow_html=True)
 
 if uploaded_file:
     try:
@@ -253,6 +307,7 @@ if uploaded_file:
         reject_rate = float((results["Credit_Decision"] == "Reject").mean() * 100)
         high_risk_rate = float((results["Risk_Label"] == "High Risk").mean() * 100)
 
+        st.markdown("<div class='panel'>", unsafe_allow_html=True)
         top_metrics = st.columns(3)
         top_metrics[0].metric("Scored Rows 📈", _compact_number(total_rows))
         top_metrics[1].metric("Filtered Rows 🧹", _compact_number(filtered_rows))
@@ -267,14 +322,17 @@ if uploaded_file:
             f"Filtered out {quality['filter_rate_pct']}% of rows during preprocessing. "
             f"Invalid numeric rows removed: {quality['invalid_numeric_rows']:,}."
         )
+        st.markdown("</div>", unsafe_allow_html=True)
 
         st.markdown("<div class='section-title'>Portfolio Snapshot 🧠</div>", unsafe_allow_html=True)
+        st.markdown("<div class='panel panel-tight'>", unsafe_allow_html=True)
         p1, p2, p3 = st.columns(3)
         p1.metric("Review Rate 🟨", f"{review_rate:.1f}%")
         p2.metric("High Risk Share 🚨", f"{high_risk_rate:.1f}%")
         p3.metric(
             "Avg Suggested Limit 💳", f"{float(results['Suggested_Credit_Limit'].mean()):,.2f}"
         )
+        st.markdown("</div>", unsafe_allow_html=True)
 
         type_summary = (
             results.groupby("type")
@@ -287,41 +345,51 @@ if uploaded_file:
             .round(2)
         )
 
-        st.markdown("<div class='section-title'>Risk Distribution 📉</div>", unsafe_allow_html=True)
-        st.markdown(
-            "<div class='section-note'>This chart shows how transaction risk scores are distributed across score bands, helping you see whether the portfolio is concentrated in low-, medium-, or high-score ranges.</div>",
-            unsafe_allow_html=True,
-        )
-        histogram = (
-            pd.cut(results["Risk_Score"], bins=RISK_HISTOGRAM_BINS, include_lowest=True)
-            .value_counts(sort=False)
-            .rename_axis("Risk Band")
-            .reset_index(name="Transactions")
-        )
-        histogram["Risk Band"] = histogram["Risk Band"].astype(str)
-        st.bar_chart(histogram.set_index("Risk Band"))
+        chart_left, chart_right = st.columns(2)
 
-        st.markdown("<div class='section-title'>Decision Mix 🧾</div>", unsafe_allow_html=True)
-        st.markdown(
-            "<div class='section-note'>This chart compares how many transactions were approved, sent for review, or rejected under the current policy thresholds.</div>",
-            unsafe_allow_html=True,
-        )
-        decision_mix = (
-            results["Credit_Decision"].value_counts().rename_axis("Decision").reset_index(name="Count")
-        )
-        st.bar_chart(decision_mix.set_index("Decision"))
+        with chart_left:
+            st.markdown("<div class='section-title'>Risk Distribution 📉</div>", unsafe_allow_html=True)
+            st.markdown(
+                "<div class='panel'><div class='section-note'>This chart shows how transaction risk scores are distributed across score bands, helping you see where the portfolio is concentrated.</div>",
+                unsafe_allow_html=True,
+            )
+            histogram = (
+                pd.cut(results["Risk_Score"], bins=RISK_HISTOGRAM_BINS, include_lowest=True)
+                .value_counts(sort=False)
+                .rename_axis("Risk Band")
+                .reset_index(name="Transactions")
+            )
+            histogram["Risk Band"] = histogram["Risk Band"].astype(str)
+            st.bar_chart(histogram.set_index("Risk Band"))
+            st.markdown("</div>", unsafe_allow_html=True)
+
+        with chart_right:
+            st.markdown("<div class='section-title'>Decision Mix 🧾</div>", unsafe_allow_html=True)
+            st.markdown(
+                "<div class='panel'><div class='section-note'>This chart compares how many transactions were approved, reviewed, or rejected under the current policy thresholds.</div>",
+                unsafe_allow_html=True,
+            )
+            decision_mix = (
+                results["Credit_Decision"]
+                .value_counts()
+                .rename_axis("Decision")
+                .reset_index(name="Count")
+            )
+            st.bar_chart(decision_mix.set_index("Decision"))
+            st.markdown("</div>", unsafe_allow_html=True)
 
         st.markdown("<div class='section-title'>Transaction Type Analysis 🔍</div>", unsafe_allow_html=True)
         st.markdown(
-            "<div class='section-note'>This table compares CASH_OUT and TRANSFER transactions to show which type has weaker risk quality, lower stability, and lower suggested credit capacity.</div>",
+            "<div class='panel'><div class='section-note'>This table compares CASH_OUT and TRANSFER transactions to show which type has weaker risk quality, lower stability, and lower suggested credit capacity.</div>",
             unsafe_allow_html=True,
         )
         st.dataframe(type_summary)
+        st.markdown("</div>", unsafe_allow_html=True)
 
         if "step" in processed_df.columns:
             st.markdown("<div class='section-title'>Cash-Flow Trend Over Time 📊</div>", unsafe_allow_html=True)
             st.markdown(
-                "<div class='section-note'>This graph tracks transaction volume and average balance over time steps so you can spot spikes, irregular movement, and balance instability.</div>",
+                "<div class='panel'><div class='section-note'>This graph tracks transaction volume and average balance over time steps so you can spot spikes, irregular movement, and balance instability.</div>",
                 unsafe_allow_html=True,
             )
             trend = (
@@ -334,10 +402,11 @@ if uploaded_file:
                 .reset_index()
             )
             st.line_chart(trend.set_index("step"))
+            st.markdown("</div>", unsafe_allow_html=True)
 
         st.markdown("<div class='section-title'>Explainability Layer 💬</div>", unsafe_allow_html=True)
         st.markdown(
-            "<div class='section-note'>This table explains the predicted outcome for each transaction using risk probability, risk label, stability score, credit decision, and recommendation fields.</div>",
+            "<div class='panel'><div class='section-note'>This table explains the predicted outcome for each transaction using risk probability, risk label, stability score, credit decision, and recommendation fields.</div>",
             unsafe_allow_html=True,
         )
         st.dataframe(
@@ -356,21 +425,22 @@ if uploaded_file:
                 ]
             ].head(RESULT_PREVIEW_ROWS)
         )
+        st.markdown("</div>", unsafe_allow_html=True)
 
         st.markdown("<div class='section-title'>Results Preview 🧾</div>", unsafe_allow_html=True)
         st.markdown(
-            "<div class='section-note'>This is the final scored output preview showing the model prediction and business decision for a sample of processed transactions.</div>",
+            "<div class='panel'><div class='section-note'>This is the final scored output preview showing the model prediction and business decision for a sample of processed transactions.</div>",
             unsafe_allow_html=True,
         )
-        st.dataframe(
-            results.head(RESULT_PREVIEW_ROWS)
-        )
+        st.dataframe(results.head(RESULT_PREVIEW_ROWS))
+        st.markdown("</div>", unsafe_allow_html=True)
 
         st.markdown("<div class='section-title'>Uploaded Data Preview 🗂️</div>", unsafe_allow_html=True)
         st.markdown(
-            "<div class='section-note'>This is a sample of the original uploaded CSV so you can compare the raw input with the scored output shown above.</div>",
+            "<div class='panel'><div class='section-note'>This is a sample of the original uploaded CSV so you can compare the raw input with the scored output shown above.</div>",
             unsafe_allow_html=True,
         )
         st.dataframe(df.head(UPLOAD_PREVIEW_ROWS))
+        st.markdown("</div>", unsafe_allow_html=True)
     except Exception as exc:
         st.error(f"Failed to score file: {exc}")
