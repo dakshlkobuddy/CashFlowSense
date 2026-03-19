@@ -96,10 +96,55 @@ html, body, [class*="css"]  {
   box-shadow: 0 24px 60px rgba(3, 12, 22, 0.35);
 }
 
+.hero-head {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin: 0 0 10px 0;
+}
+
+.brand-logo {
+  width: 68px;
+  height: 68px;
+  border-radius: 20px;
+  position: relative;
+  background: linear-gradient(145deg, rgba(76, 201, 240, 0.18), rgba(30, 136, 229, 0.28));
+  border: 1px solid rgba(160, 216, 255, 0.18);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 14px 28px rgba(1, 8, 16, 0.22);
+  overflow: hidden;
+}
+
+.brand-logo:before,
+.brand-logo:after {
+  content: "";
+  position: absolute;
+  border-radius: 999px;
+}
+
+.brand-logo:before {
+  width: 44px;
+  height: 44px;
+  left: 12px;
+  top: 12px;
+  border: 5px solid #56d0ff;
+  border-right-color: transparent;
+  border-bottom-color: rgba(86, 208, 255, 0.35);
+  transform: rotate(45deg);
+}
+
+.brand-logo:after {
+  width: 18px;
+  height: 18px;
+  right: 10px;
+  bottom: 10px;
+  background: linear-gradient(135deg, #60d8ff 0%, #2a95f7 100%);
+  box-shadow: 0 0 18px rgba(76, 201, 240, 0.35);
+}
+
 .hero h1 {
   font-family: 'Space Grotesk', sans-serif;
   font-size: 42px;
-  margin: 0 0 10px 0;
+  margin: 0;
   letter-spacing: 0.3px;
 }
 
@@ -267,7 +312,10 @@ st.sidebar.markdown("Tune the policy thresholds below to make the engine more st
 st.markdown(
     """
 <div class="hero">
-  <h1>CashFlowSense</h1>
+  <div class="hero-head">
+    <div class="brand-logo"></div>
+    <h1>CashFlowSense</h1>
+  </div>
   <p>AI based credit risk intelligence for transaction-level decisions.</p>
   <div class="badges">
     <span class="badge">⚡ Model scoring</span>
